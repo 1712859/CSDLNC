@@ -42,7 +42,7 @@ app.use('/', require('./routes/homeRoutes'));
 app.use('/login', require('./routes/loginRoutes'));
 app.use('/user', require('./routes/userRoutes'));
 app.use('/signup', require('./routes/signupRoutes'));
-
+app.use("/search", require("./routes/searchRoutes"));
 app.set('port', process.env.PORT || 5000)
 app.listen(app.get('port'), () => {
     console.log(`Server is running port ${app.get('port')}`)
