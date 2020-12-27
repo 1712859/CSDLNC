@@ -14,9 +14,12 @@ router.post('/', async(req, res, next) => {
     } else
     if (name == user.TenDangNhap && pass == user.MatKhau) {
         req.session.user = user;
-
         var khachhang = await userController.loadUser(user.MaKH);
-        console.log(khachhang)
+        if (khachhang.GioiTinh == true) {
+            khachhang.gioi = "nữ"
+        } else {
+            khachhang.gioi = "Nam"
+        }
         req.session.khachhang = khachhang;
         console.log("2")
         res.redirect('/')
