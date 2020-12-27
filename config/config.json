@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "sa",
-        "password": "123",
+        "password": "159510tlTL",
         "database": "Shopee",
         "host": "localhost",
         "dialect": "mssql"
