@@ -5,19 +5,21 @@
             <a href="/">Home</a>
             <span>/ /</span>
          </li>
-         <li><li>
+         <li>
+         <li>
             <a href="/user/{{KhachHang.MaKH}}">User</a>
             <span>/ /</span>
          </li>
-         <li>Sell</li></li>
+         <li>Sell</li>
+         </li>
       </ul>
    </div>
 </div>
 <section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
-         <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
-            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Toys Shop</h3>
-            <div class="row">
-               <div class="side-bar col-lg-3">
+   <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+
+      <div class="row">
+         <div class="side-bar col-lg-3">
             <div class="search-hotel">
                <h3 class="agileits-sear-head"><a style="color: rgb(199, 49, 111);" href="/login/logout">Logout</a></h3>
             </div>
@@ -56,10 +58,46 @@
                </div>
             </div>
             <!-- //deals -->
-               </div>
-               <div class="left-ads-display col-lg-9">
+         </div>
+         <div class="left-ads-display col-lg-9">
+            <div class="card bg-light">
+               <article class="card-body mx-auto" style="max-width: 400px;">
                   
-               </div>
+                  <form action="/user/sell/sp/{{KhachHang.MaKH}}" method="POST">
+                     <div class="form-group input-group">
+                        
+                        <input name="tensp" class="form-control" placeholder="Tên Sản Phẩm" type="text">
+                     </div> <!-- form-group// -->
+                     <div class="form-group input-group">
+                        
+                        <input name="mota" class="form-control" placeholder="Mô Tả" type="text">
+                     </div> <!-- form-group// -->
+                     <div class="form-group input-group">
+                        
+                        <input class="form-control" placeholder="Giá Bán" type="number" name="gia">
+                     </div> <!-- form-group// -->
+                     <div class="form-group input-group">
+                        
+                        <select class="form-control" name="danhmuc">
+                           <option selected="">Chọn Danh Mục/option>
+                           {{#each doanhmuc}}
+                           <option value="{{MaDanhMuc}}">{{TenDanhMuc}}</option>
+                           {{/each}}
+                        </select>
+                     </div> <!-- form-group end.// -->
+                     <div class="form-group input-group">
+                        
+                        <input class="form-control" placeholder="Số Lượng Bán" type="number" name="soluong">
+                     </div> <!-- form-group// -->
+                     
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Thêm Sản Phẩm </button>
+                     </div> <!-- form-group// -->
+                     
+                  </form>
+               </article>
             </div>
          </div>
-      </section>
+      </div>
+   </div>
+</section>

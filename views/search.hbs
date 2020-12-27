@@ -1,0 +1,23 @@
+<div class="items-container">
+
+    <table class="table center" style="width: 80%;">
+        <thead>
+            <tr>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Ngày đăng</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{this.MaSP}}</td>
+                <td>{{this.TenSP}}</td>
+                <td>{{this.Gia}}</td>
+                <td>{{this.NgayDang}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
