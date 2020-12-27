@@ -33,13 +33,15 @@ app.use((req, res, next) => {
 
     res.locals.Keeplogin = req.session.user ? true : false;
     res.locals.KhachHang = req.session.khachhang;
+    res.locals.Message = req.session.Message;
+
     next();
 });
 //-------------------------------------
 app.use('/', require('./routes/homeRoutes'));
 app.use('/login', require('./routes/loginRoutes'));
-
-
+app.use('/user', require('./routes/userRoutes'));
+app.use('/signup', require('./routes/signupRoutes'));
 app.set('port', process.env.PORT || 5000)
 app.listen(app.get('port'), () => {
     console.log(`Server is running port ${app.get('port')}`)
