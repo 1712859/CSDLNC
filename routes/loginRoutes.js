@@ -1,14 +1,17 @@
 let express = require('express');
 let router = express.Router();
-
+let loginController = require('../controllers/loginController');
+let userController = require('../controllers/userController');
 router.post('/', async(req, res, next) => {
     let name = req.body.Email;
     let pass = req.body.password;
+    var user = await loginController.login(name, pass);
 
-    if (name == "anhtu@gmail.com" && pass == "123456") {
-        req.session.user = "true"
-
-        console.log("oke")
+    if (name == user.TenDangNhap && pass == user.MatKhau) {
+        req.session.user = user;
+        var khachhang = await userController.loadUser(user.MaKH);
+        console.log(khachhang)
+        req.session.khachhang = khachhang;
         res.redirect('/')
     } else {
         res.redirect('/')
