@@ -21,7 +21,8 @@ router.post('/', async(req, res, next) => {
             khachhang.gioi = "Nam"
         }
         req.session.khachhang = khachhang;
-        console.log("2")
+
+        console.log(khachhang.MaKH);
         res.redirect('/')
     } else {
 
